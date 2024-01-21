@@ -20,14 +20,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from elon.views import *
-from user.views import *
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('', CarApi.as_view(), name = 'CarApi'),
-    path('user/api', UserApiList.as_view(), name = 'UserApi'),
+    path('user/', include('user.urls')),
+    path('car/', include('elon.urls')),
 
 ]
 

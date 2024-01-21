@@ -43,7 +43,7 @@ class CarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Car
         fields = '__all__'
-        read_only_fields = ['photo']
+        read_only_fields = ['photo', 'id']
 
 
 class CarGetSer(serializers.ModelSerializer):

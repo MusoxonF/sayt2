@@ -9,3 +9,8 @@ from elon.models import *
 class UserApiList(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializers
+
+
+class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializers
