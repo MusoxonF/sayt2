@@ -22,7 +22,6 @@ class CarDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class CarApi(APIView):
     parser_classes = [MultiPartParser]
-    # permission_classes = [IsAuthenticated]
 
     def get(self, request):
         a = Car.objects.all()
@@ -44,7 +43,6 @@ class CarApi(APIView):
 
 
 class CarApiDetail(APIView):
-    # permission_classes = [IsAuthenticated]
     def get(self, request, id):
         try:   
             a = Car.objects.get(id = id)
